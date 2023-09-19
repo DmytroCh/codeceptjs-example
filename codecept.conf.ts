@@ -16,6 +16,7 @@ export const config: CodeceptJS.MainConfig = {
     features: './features/*.feature', // feature files location
     steps: [
       './step_definitions/checkout.steps.ts',
+      './step_definitions/addingToCart.steps.ts',
     ] // step definitions location
   },
   mocha: {
@@ -45,7 +46,8 @@ export const config: CodeceptJS.MainConfig = {
     CartItem: './pages/share/CartItem.share.ts',
     CheckoutStepOnePage: './pages/checkoutSteps/checkoutStepOnePage.ts',
     CheckoutStepTwoPage: './pages/checkoutSteps/checkoutStepTwoPage.ts',
-    CompletePage: './pages/checkoutSteps/completePage.ts'
+    CompletePage: './pages/checkoutSteps/completePage.ts',
+    ProductPage: './pages/ProductPage.ts'
   },
   name: 'codeceptjs'
 }

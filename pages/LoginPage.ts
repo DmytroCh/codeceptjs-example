@@ -22,7 +22,7 @@ class LoginPage {
         I.amOnPage(ROUTES.base);
         this.fillCredentials(user);
         I.click(this.locators.buttons.login);
-        I.amOnPage(ROUTES.inventory);
+        I.seeInCurrentUrl(ROUTES.inventory);
     }
 }
 

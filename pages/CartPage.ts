@@ -1,11 +1,13 @@
+import assert from "assert";
 import { ROUTES } from "../utils/consts/routes";
 import { DeliveryUser } from "../utils/types/types";
-const { I, CartItem, CheckoutStepOnePage } = inject();
+const { I, CartItem, CheckoutStepOnePage, CheckoutStepTwoPage } = inject();
 
 class CartPage {
     locators = {
         buttons: {
             checkout: '#checkout'
+
         }
     }
 
@@ -27,11 +29,17 @@ class CartPage {
         return await I.grabTextFromAll(CartItem.locators.titles.itemTitle);
     }
 
+    async checkIfProductInCart(name: string): Promise<void>{
+        I.see(name);
+    }
+
     sendOrder(user: DeliveryUser): void {
         I.click(this.locators.buttons.checkout);
-        I.amOnPage(ROUTES.checkoutFirstStep);
+        I.seeInCurrentUrl(ROUTES.checkoutFirstStep);
         CheckoutStepOnePage.sendDeliveryData(user);
+        CheckoutStepTwoPage.finishOrder();
     }
+
 }
 
 // For inheritance
