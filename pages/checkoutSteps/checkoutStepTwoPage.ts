@@ -9,6 +9,7 @@ class CheckoutStepTwoPage {
     }
     finishOrder(): void {
         I.click(this.locators.buttons.finish);
+        I.seeInCurrentUrl(ROUTES.checkoutComplete);
     }
 }
 

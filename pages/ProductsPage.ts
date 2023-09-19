@@ -1,5 +1,6 @@
 import assert from "assert";
 import { Locator } from "playwright";
+import { ROUTES } from "../utils/consts/routes";
 const { I, ProductTemplate } = inject();
 const eachElement = codeceptjs.container.plugins('eachElement');
 
@@ -16,6 +17,12 @@ class ProductsPage {
                 await ProductTemplate.addProductToCart(product);
                 //await el.locator(this.locators.buttons.addToCart).click();
             });
+    }
+
+    openProductByName(name: string){
+        I.see(name);
+        I.click(name);
+        I.seeInCurrentUrl(ROUTES.inventoryItem);
     }
 
     async countOrderedProducts(expectedNumber: number): Promise<void> {

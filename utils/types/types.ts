@@ -3,7 +3,7 @@ export type User = {
     password: string
 }
 
-export type Users = [User];
+export type Users = Array<User>;
 
 export type DeliveryUser = {
     name: string,
@@ -12,5 +12,6 @@ export type DeliveryUser = {
 }
 
 export enum usersOptions {
-    standardUser = "standard_user"
+    standardUser = "standard_user",
+    problemUser = "problem_user"
 }

@@ -19,7 +19,7 @@ class CheckoutStepOnePage {
         I.fillField(this.locators.inputs.surname, user.surname);
         I.fillField(this.locators.inputs.postCode, user.postCode);
         I.click(this.locators.buttons.checkout);
-        I.amOnPage(ROUTES.checkoutSecondStep);
+        I.seeInCurrentUrl(ROUTES.checkoutSecondStep);
     }
 }
 

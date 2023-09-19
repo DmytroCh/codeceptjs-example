@@ -8,7 +8,7 @@ class CompletePage {
         }
     }
     verifyOrder(){
-        I.amOnPage(ROUTES.checkoutComplete);
+        I.seeInCurrentUrl(ROUTES.checkoutComplete);
         I.waitForVisible(this.locators.headers.completeHeader);
     }
 }

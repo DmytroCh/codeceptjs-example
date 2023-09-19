@@ -56,5 +56,5 @@ Then('I finish the purchase', () => {
 
 Then('I validate that the website confirms the order', () => {
   // From "features/checkout.feature" {"line":13,"column":5}
-  CompletePage.verifyOrder()
+  CompletePage.verifyOrder();
 });

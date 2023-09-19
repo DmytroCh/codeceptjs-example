@@ -11,7 +11,7 @@ class TopBar {
 
     openCart():void{
         I.click(this.locators.buttons.cart);
-        I.amOnPage(ROUTES.cart);
+        I.seeInCurrentUrl(ROUTES.cart);
     }
 }
 
