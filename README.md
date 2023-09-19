@@ -2,12 +2,13 @@
 1. `npm install`
 2. `npx codeceptjs run --features`
 
+### Run tests with html reporter
+`npx codeceptjs run --features --steps --reporter mochawesome`
+
 # Results
 After tests run you should see:
  - Information in console with tests rresults ![Alt text](image.png)
  - If you run tests with html report generation, you should have `./output/mochawesome.html` file which you can open in your browser ![Alt text](image-1.png)
-### Run tests with html reporter
-`npx codeceptjs run --features --steps --reporter mochawesome`
 
 ## Writting tests
 To implement new test cases you need:
