@@ -1,6 +1,7 @@
 import assert from "assert";
 import { deliveryUser, getUser } from "../utils/consts/users";
 import { usersOptions } from "../utils/types/types";
+import { ROUTES } from "../utils/consts/routes";
 const { I, LoginPage, ProductsPage, TopBar, CartPage, CompletePage } = inject();
 
 // TODO: find solution for better way to share data between steps
@@ -11,6 +12,7 @@ Given('I am logged in as a {string}', (userType: usersOptions) => {
   // From "features/checkout.feature" {"line":6,"column":5}
   const user = getUser(userType);
   LoginPage.login(user);
+  I.seeInCurrentUrl(ROUTES.inventory);
 });
 
 When('I add all items to the cart', async () => {

@@ -10,7 +10,11 @@ class LoginPage {
         },
         buttons: {
             login: 'Login'
+        },
+        errors:{
+            lockedOut: 'Epic sadface: Sorry, this user has been locked out.',
         }
+
     }
 
     fillCredentials(user: User):void {
@@ -22,7 +26,6 @@ class LoginPage {
         I.amOnPage(ROUTES.base);
         this.fillCredentials(user);
         I.click(this.locators.buttons.login);
-        I.seeInCurrentUrl(ROUTES.inventory);
     }
 }
 
