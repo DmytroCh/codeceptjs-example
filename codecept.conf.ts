@@ -17,6 +17,9 @@ export const config: CodeceptJS.MainConfig = {
     steps: [
       './step_definitions/checkout.steps.ts',
       './step_definitions/addingToCart.steps.ts',
+      './step_definitions/sorting.steps.ts',
+      './step_definitions/sortingByPrice.steps.ts',
+      './step_definitions/failedLogin.steps.ts'
     ] // step definitions location
   },
   mocha: {

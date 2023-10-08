@@ -8,6 +8,10 @@ const users: Users = [
     {
         email: "problem_user",
         password: "secret_sauce"
+    },
+    {
+        email: "locked_out_user",
+        password: "secret_sauce"
     }
 ]
 export const getUser = (user: usersOptions): User => {
