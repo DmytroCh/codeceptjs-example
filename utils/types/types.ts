@@ -14,5 +14,6 @@ export type DeliveryUser = {
 export enum usersOptions {
     standardUser = "standard_user",
     problemUser = "problem_user",
-    lockedOutUser = "locked_out_user"
+    lockedOutUser = "locked_out_user",
+    performanceGlitchUser = "performance_glitch_user"
 }
