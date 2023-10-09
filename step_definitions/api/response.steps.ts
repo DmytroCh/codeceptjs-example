@@ -71,7 +71,6 @@ Then('the response body should match user name: {string}, user job: {string}', (
 Then('the response time should be no longer than {string} second', (expetedResponseTime: string) => {
   // From "features/api/updateUser.feature" {"line":8,"column":5}
   const diff = Math.abs(endRequestTime.getTime() - startRequestTime.getTime())/1000;
-  console.log(diff);
   I.seeResponseValidByCallback(({ data, status, expect }) => {
     expect(diff).to.be.below(Number(expetedResponseTime));
   });
