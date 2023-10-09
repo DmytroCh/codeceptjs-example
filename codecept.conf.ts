@@ -13,13 +13,14 @@ export const config: CodeceptJS.MainConfig = {
   tests: './*_test.ts',
   output: './output',
   gherkin: {
-    features: './features/*.feature', // feature files location
+    features: './features/**/*.feature', // feature files location
     steps: [
       './step_definitions/checkout.steps.ts',
       './step_definitions/addingToCart.steps.ts',
       './step_definitions/sorting.steps.ts',
       './step_definitions/sortingByPrice.steps.ts',
-      './step_definitions/failedLogin.steps.ts'
+      './step_definitions/failedLogin.steps.ts',
+      './step_definitions/api/response.steps.ts',
     ] // step definitions location
   },
   mocha: {
@@ -32,7 +33,12 @@ export const config: CodeceptJS.MainConfig = {
       browser: 'chromium',
       url: 'https://www.saucedemo.com',
       show: true
-    }
+    },
+    REST: {
+      endpoint: 'https://reqres.in'
+    },
+    // .. add JSONResponse helper here
+    JSONResponse: {}
   },
   plugins: {
     screenshotOnFail: { // if true take screenshot of failed scenarios
