@@ -13,8 +13,8 @@ type ProductPage = typeof import('./pages/ProductPage');
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any, LoginPage: LoginPage, ProductsPage: ProductsPage, CartPage: CartPage, ProductTemplate: ProductTemplate, TopBar: TopBar, CartItem: CartItem, CheckoutStepOnePage: CheckoutStepOnePage, CheckoutStepTwoPage: CheckoutStepTwoPage, CompletePage: CompletePage, ProductPage: ProductPage }
-  interface Methods extends Playwright {}
-  interface I extends ReturnType<steps_file> {}
+  interface Methods extends Playwright, REST, JSONResponse {}
+  interface I extends ReturnType<steps_file>, WithTranslation<Methods> {}
   namespace Translation {
     interface Actions {}
   }
