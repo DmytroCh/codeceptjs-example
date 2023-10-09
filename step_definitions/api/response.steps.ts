@@ -26,6 +26,11 @@ Then('I print all users with odd ID numbers', () => {
 
 Then('the response should contain the message {string}', (message: string) => {
   // From "features/api/getSingleUser.feature" {"line":7,"column":5}
+  I.seeResponseContainsJson({error: message});
+});
+
+Then('the response should be empty', () => {
+  // From "features/api/getSingleUser.feature" {"line":7,"column":5}
   I.seeResponseContainsJson({});
 });
 
@@ -34,6 +39,13 @@ When("I send a POST request to the endpoint {string} to create new user", async 
   await I.sendPostRequest(path, {
     "name": "morpheus",
     "job": "leader"
+  });
+});
+
+When("I send a POST request to the endpoint {string} to login", async (path: string) => {
+  // From "features/api/createUser.feature" {"line":5,"column":5}
+  await I.sendPostRequest(path, {
+    "email": "eve.holt@reqres.in",
   });
 });
 
