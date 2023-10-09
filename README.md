@@ -3,7 +3,7 @@
 2. `npx codeceptjs run --features`
 
 ### Run tests with html reporter
-`npx codeceptjs run --features --steps --reporter mochawesome`
+`npx codeceptjs run --steps --features --reporter mochawesome`
 
 # Results
 After tests run you should see:
@@ -13,7 +13,11 @@ After tests run you should see:
 ## Writting tests
 To implement new test cases you need:
 1. Create new `[name].feature` in `./features` (How to write features in Gherkin language: `https://cucumber.io/docs/gherkin/`)
-2. Create steps file `[name].steps.ts` in `./step_definitions` and run: `npx codeceptjs gherkin:snippets [--path=PATH] [--feature=PATH]` to generate steps.
+2. Create steps file `[name].steps.ts` in `./step_definitions` and run: 
+
+   `npx codeceptjs gherkin:snippets [--path=PATH] [--feature=PATH]` 
+   
+   to generate steps.
 3. Fill steps by code.
 4. If you crated pages in `./pages`:
    1. add this files to `include` section at `codecept.conf.ts`.
@@ -23,5 +27,6 @@ To implement new test cases you need:
 
 1. List steps: `npx codeceptjs gherkin:steps`
 2. Use grep to find steps in a list (grep works on Linux & MacOS):
-`npx codeceptjs gherkin:steps | grep user`
+   
+   `npx codeceptjs gherkin:steps | grep user`
 
